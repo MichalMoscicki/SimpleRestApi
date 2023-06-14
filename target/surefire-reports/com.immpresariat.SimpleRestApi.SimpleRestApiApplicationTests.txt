@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.immpresariat.SimpleRestApi.SimpleRestApiApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.176 s - in com.immpresariat.SimpleRestApi.SimpleRestApiApplicationTests
