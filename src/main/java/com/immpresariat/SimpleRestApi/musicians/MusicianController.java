@@ -1,59 +1,58 @@
 package com.immpresariat.SimpleRestApi.musicians;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/musician")
+@RequestMapping("/musicians")
 public class MusicianController {
 
     @Autowired
     MusicianRepository musicianRepository;
 
+
     @GetMapping("")
-    public List<Musician> findAll(){
-        return musicianRepository.findAll();
+    public ResponseEntity<List<Musician>> findAll() {
+        List<Musician> musicians = musicianRepository.findAll();
+        return new ResponseEntity<>(musicians, HttpStatus.OK);
+
     }
 
     @GetMapping("/{id}")
-    public Musician findById(@PathVariable Long id){
-        return musicianRepository.findById(id).get();
+    public ResponseEntity<Musician> findById(@PathVariable Long id) {
+        Optional<Musician> musicianOptional = musicianRepository.findById(id);
+        return new ResponseEntity<>(musicianOptional.get(), HttpStatus.OK);
     }
 
     @PostMapping("")
-    public int add(@RequestBody Musician musician){
-        try{
+    public ResponseEntity<Musician> add(@RequestBody @Valid Musician musician) {
             musicianRepository.save(musician);
-        } catch (Exception e){
-            e.printStackTrace();
-            //tu można sprawdzić, co nie działa i wyrzucić czego brakuje
-            return -1;
-        }
-        return 1;
+            return new ResponseEntity<>(musician, HttpStatus.CREATED);
+
     }
 
     @PutMapping("/{id}")
-    public int update(@RequestBody Musician musicianUpdated, @PathVariable Long id){
+    public ResponseEntity<Musician> update(@RequestBody Musician musicianUpdated, @PathVariable Long id) {
 
-        try{
             Musician musician = musicianRepository.findById(id).get();
             musician.update(musicianUpdated);
             musicianRepository.save(musician);
-        } catch (Exception e){
-            e.printStackTrace();
-            //tu można sprawdzić, co nie działa i wyrzucić czego brakuje
-            return -1;
-        }
-        return 1;
+
+        return new ResponseEntity<>(musician, HttpStatus.OK);
     }
 
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id){
-            musicianRepository.deleteById(id);
+    public ResponseEntity<String> delete(@PathVariable Long id) {
+        musicianRepository.deleteById(id);
+        return ResponseEntity.ok("Succesfully deleted musician with id: " + id);
     }
 
 
