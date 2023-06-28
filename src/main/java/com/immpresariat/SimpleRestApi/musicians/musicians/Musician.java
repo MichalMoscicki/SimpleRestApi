@@ -1,4 +1,4 @@
-package com.immpresariat.SimpleRestApi.musicians.model;
+package com.immpresariat.SimpleRestApi.musicians.musicians;
 
 
 import jakarta.persistence.Entity;

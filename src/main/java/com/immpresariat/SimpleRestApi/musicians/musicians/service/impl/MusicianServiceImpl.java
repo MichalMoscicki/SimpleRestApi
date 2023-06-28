@@ -1,10 +1,10 @@
-package com.immpresariat.SimpleRestApi.musicians.service.impl;
+package com.immpresariat.SimpleRestApi.musicians.musicians.service.impl;
 
 import com.immpresariat.SimpleRestApi.musicians.exception.ResourceNotFoundException;
-import com.immpresariat.SimpleRestApi.musicians.model.Musician;
-import com.immpresariat.SimpleRestApi.musicians.repository.MusicianRepository;
-import com.immpresariat.SimpleRestApi.musicians.payload.MusicianDTO;
-import com.immpresariat.SimpleRestApi.musicians.service.MusicianService;
+import com.immpresariat.SimpleRestApi.musicians.musicians.Musician;
+import com.immpresariat.SimpleRestApi.musicians.musicians.MusicianRepository;
+import com.immpresariat.SimpleRestApi.musicians.musicians.service.MusicianService;
+import com.immpresariat.SimpleRestApi.musicians.musicians.MusicianDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 

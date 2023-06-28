@@ -1,11 +1,7 @@
-package com.immpresariat.SimpleRestApi.musicians.controller;
+package com.immpresariat.SimpleRestApi.musicians.musicians;
 
-import com.immpresariat.SimpleRestApi.musicians.model.Musician;
-import com.immpresariat.SimpleRestApi.musicians.payload.MusicianDTO;
-import com.immpresariat.SimpleRestApi.musicians.service.MusicianService;
-import com.immpresariat.SimpleRestApi.musicians.service.impl.MusicianServiceImpl;
-import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.immpresariat.SimpleRestApi.musicians.musicians.MusicianDTO;
+import com.immpresariat.SimpleRestApi.musicians.musicians.service.MusicianService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

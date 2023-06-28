@@ -1,4 +1,4 @@
-package com.immpresariat.SimpleRestApi.musicians.payload;
+package com.immpresariat.SimpleRestApi.musicians.musicians;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
