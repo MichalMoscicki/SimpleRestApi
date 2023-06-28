@@ -1,4 +1,4 @@
-package com.immpresariat.SimpleRestApi;
+package com.immpresariat.SimpleRestApi.musicians;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
